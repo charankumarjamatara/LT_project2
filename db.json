@@ -1,0 +1,205 @@
+
+{
+  "tournaments": [
+    {
+      "id": "T001",
+      "name": "College Cricket Cup 2026",
+      "sport": "Cricket",
+      "date": "2026-11-05",
+      "location": "Tadepalligudem"
+    },
+    {
+      "id": "T002",
+      "name": "Intercollege Football League",
+      "sport": "Football",
+      "date": "2026-11-10",
+      "location": "Vijayawada"
+    },
+    {
+      "id": "T003",
+      "name": "Badminton Championship 2026",
+      "sport": "Badminton",
+      "date": "2026-11-15",
+      "location": "Rajahmundry"
+    }
+  ],
+  "teams": [
+    {
+      "id": "TM001",
+      "name": "Thunder Strikers",
+      "coach": "Ravi Kumar",
+      "tournamentId": "T001"
+    },
+    {
+      "id": "TM002",
+      "name": "Royal Challengers",
+      "coach": "Suresh Reddy",
+      "tournamentId": "T001"
+    },
+    {
+      "id": "TM003",
+      "name": "Blue Warriors",
+      "coach": "Arjun Rao",
+      "tournamentId": "T001"
+    },
+    {
+      "id": "TM004",
+      "name": "Eagle FC",
+      "coach": "Kiran Kumar",
+      "tournamentId": "T002"
+    },
+    {
+      "id": "TM005",
+      "name": "United FC",
+      "coach": "Praveen Das",
+      "tournamentId": "T002"
+    },
+    {
+      "id": "TM006",
+      "name": "Smash Masters",
+      "coach": "Anil Varma",
+      "tournamentId": "T003"
+    },
+    {
+      "id": "TM007",
+      "name": "Net Ninjas",
+      "coach": "Vamsi Krishna",
+      "tournamentId": "T003"
+    }
+  ],
+  "players": [
+    {
+      "id": "P001",
+      "name": "Rahul Sharma",
+      "age": 20,
+      "teamId": "TM001",
+      "tournamentId": "T001"
+    },
+    {
+      "id": "P002",
+      "name": "Vikram Reddy",
+      "age": 21,
+      "teamId": "TM001",
+      "tournamentId": "T001"
+    },
+    {
+      "id": "P003",
+      "name": "Karthik Naidu",
+      "age": 19,
+      "teamId": "TM002",
+      "tournamentId": "T001"
+    },
+    {
+      "id": "P004",
+      "name": "Aditya Varma",
+      "age": 20,
+      "teamId": "TM002",
+      "tournamentId": "T001"
+    },
+    {
+      "id": "P005",
+      "name": "Manoj Teja",
+      "age": 22,
+      "teamId": "TM003",
+      "tournamentId": "T001"
+    },
+    {
+      "id": "P006",
+      "name": "Sai Charan",
+      "age": 21,
+      "teamId": "TM004",
+      "tournamentId": "T002"
+    },
+    {
+      "id": "P007",
+      "name": "Nikhil Rao",
+      "age": 20,
+      "teamId": "TM005",
+      "tournamentId": "T002"
+    },
+    {
+      "id": "P008",
+      "name": "Harsha Vardhan",
+      "age": 19,
+      "teamId": "TM006",
+      "tournamentId": "T003"
+    },
+    {
+      "id": "P009",
+      "name": "Tejaswini Rao",
+      "age": 20,
+      "teamId": "TM007",
+      "tournamentId": "T003"
+    }
+  ],
+  "matches": [
+    {
+      "id": "M001",
+      "tournamentId": "T001",
+      "team1": "TM001",
+      "team2": "TM002",
+      "date": "2026-11-05",
+      "time": "10:00",
+      "status": "Completed"
+    },
+    {
+      "id": "M002",
+      "tournamentId": "T001",
+      "team1": "TM002",
+      "team2": "TM003",
+      "date": "2026-11-06",
+      "time": "14:00",
+      "status": "Completed"
+    },
+    {
+      "id": "M003",
+      "tournamentId": "T001",
+      "team1": "TM001",
+      "team2": "TM003",
+      "date": "2026-11-07",
+      "time": "11:00",
+      "status": "Scheduled"
+    },
+    {
+      "id": "M004",
+      "tournamentId": "T002",
+      "team1": "TM004",
+      "team2": "TM005",
+      "date": "2026-11-10",
+      "time": "16:00",
+      "status": "Scheduled"
+    },
+    {
+      "id": "M005",
+      "tournamentId": "T003",
+      "team1": "TM006",
+      "team2": "TM007",
+      "date": "2026-11-15",
+      "time": "09:00",
+      "status": "Completed"
+    }
+  ],
+  "results": [
+    {
+      "id": "R001",
+      "matchId": "M001",
+      "team1Score": 165,
+      "team2Score": 142,
+      "outcome": "Team 1 Wins"
+    },
+    {
+      "id": "R002",
+      "matchId": "M002",
+      "team1Score": 120,
+      "team2Score": 120,
+      "outcome": "Draw"
+    },
+    {
+      "id": "R003",
+      "matchId": "M005",
+      "team1Score": 21,
+      "team2Score": 17,
+      "outcome": "Team 1 Wins"
+    }
+  ]
+}
