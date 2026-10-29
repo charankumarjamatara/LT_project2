@@ -1,5 +1,5 @@
 
-const API_BASE_URL = "http://localhost:3000";
+const API_BASE_URL = "https://lt-project2-api.onrender.com";
 
 // GET ALL records
 export const getAll = async (resource) => {
