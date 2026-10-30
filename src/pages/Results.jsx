@@ -42,11 +42,36 @@ function Results() {
   };
 
   useEffect(() => {
-  const loadData = async () => {
-    await loadData();
-  };
+  let isMounted = true;
 
-  loadData();
+  Promise.all([
+    getAll("results"),
+    getAll("matches"),
+    getAll("teams"),
+  ])
+    .then(([resultData, matchData, teamData]) => {
+      if (isMounted) {
+        setResults(resultData);
+        setMatches(matchData);
+        setTeams(teamData);
+        setError("");
+      }
+    })
+    .catch((error) => {
+      if (isMounted) {
+        console.error("Error loading results:", error);
+        setError("Could not load results. Please check API connection.");
+      }
+    })
+    .finally(() => {
+      if (isMounted) {
+        setLoading(false);
+      }
+    });
+
+  return () => {
+    isMounted = false;
+  };
 }, []);
 
   const getMatch = (id) => {

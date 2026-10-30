@@ -319,3 +319,136 @@
     padding: 15px;
   }
 }
+
+/* Full-width listing layout */
+.teams-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+}
+
+.teams-form-card {
+  width: 100%;
+  max-width: 560px;
+}
+
+/* Team card grid */
+.teams-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+/* Individual team card */
+.team-item-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 23px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 11px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.team-item-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 5px 16px rgba(23, 32, 51, 0.06);
+}
+
+.team-item-top {
+  display: flex;
+  align-items: center;
+  margin-bottom: 19px;
+}
+
+.team-item-card h3 {
+  margin: 0 0 18px;
+  color: #172033;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.team-item-details {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  padding: 15px 0;
+  margin-top: auto;
+  border-top: 1px solid #edf0f5;
+  border-bottom: 1px solid #edf0f5;
+}
+
+.team-detail-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  color: #536178;
+  font-size: 13px;
+}
+
+.team-detail-row .detail-label {
+  color: #8994a7;
+  font-weight: 500;
+}
+
+.team-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 18px;
+}
+
+.team-item-actions button {
+  min-height: 36px;
+  padding: 9px 15px;
+  border: none;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.team-item-actions .teams-edit-button {
+  background: #4169e1;
+  color: #ffffff;
+}
+
+.team-item-actions .teams-delete-button {
+  background: #dc4545;
+  color: #ffffff;
+}
+
+.team-item-actions .teams-edit-button:hover {
+  background: #3153c8;
+}
+
+.team-item-actions .teams-delete-button:hover {
+  background: #bd3030;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .teams-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .teams-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .teams-form-card {
+    max-width: 100%;
+  }
+
+  .team-item-card {
+    padding: 18px;
+  }
+}

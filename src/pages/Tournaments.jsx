@@ -263,54 +263,48 @@ function Tournaments() {
                 : "No tournaments added yet."}
             </p>
           ) : (
-            <div className="tournament-table-wrapper">
-              <table className="tournament-table">
-                <thead>
-                  <tr>
-                    <th>Tournament</th>
-                    <th>Sport</th>
-                    <th>Date</th>
-                    <th>Location</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
+            <div className="tournament-grid">
+              {filteredTournaments.map((tournament) => (
+                <article className="tournament-item-card" key={tournament.id}>
+                  <div className="tournament-item-top">
+                    <span className="sport-label">
+                      {tournament.sport}
+                    </span>
+                  </div>
 
-                <tbody>
-                  {filteredTournaments.map((tournament) => (
-                    <tr key={tournament.id}>
-                      <td className="tournament-name-cell">
-                        {tournament.name}
-                      </td>
-                      <td>
-                        <span className="sport-label">
-                          {tournament.sport}
-                        </span>
-                      </td>
-                      <td>{tournament.date}</td>
-                      <td>{tournament.location}</td>
-                      <td>
-                        <div className="tournament-row-actions">
-                          <button
-                            type="button"
-                            className="tournament-edit-button"
-                            onClick={() => handleEdit(tournament)}
-                          >
-                            Edit
-                          </button>
+                  <h3>{tournament.name}</h3>
 
-                          <button
-                            type="button"
-                            className="tournament-delete-button"
-                            onClick={() => handleDelete(tournament.id)}
-                          >
-                            Delete
-                          </button>
-                        </div>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+                  <div className="tournament-item-details">
+                    <div className="tournament-detail-row">
+                      <span className="detail-label">Location</span>
+                      <span>{tournament.location}</span>
+                    </div>
+
+                    <div className="tournament-detail-row">
+                      <span className="detail-label">Date</span>
+                      <span>{tournament.date}</span>
+                    </div>
+                  </div>
+
+                  <div className="tournament-item-actions">
+                    <button
+                      type="button"
+                      className="tournament-edit-button"
+                      onClick={() => handleEdit(tournament)}
+                    >
+                      Edit
+                    </button>
+
+                    <button
+                      type="button"
+                      className="tournament-delete-button"
+                      onClick={() => handleDelete(tournament.id)}
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </article>
+              ))}
             </div>
           )}
         </section>

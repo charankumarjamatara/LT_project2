@@ -6,6 +6,7 @@
   color: #172033;
 }
 
+/* Header */
 .matches-page-header {
   display: flex;
   justify-content: space-between;
@@ -25,20 +26,18 @@
 .matches-page-header h1 {
   margin: 0;
   font-size: 29px;
-  line-height: 1.3;
 }
 
 .matches-subtitle {
   margin: 8px 0 0;
   color: #718096;
   font-size: 14px;
-  line-height: 1.6;
 }
 
 .matches-total {
   min-width: 145px;
   padding: 15px 18px;
-  background: #ffffff;
+  background: #fff;
   border: 1px solid #e2e8f0;
   border-radius: 10px;
 }
@@ -56,21 +55,26 @@
   font-size: 25px;
 }
 
+/* Main layout */
 .matches-layout {
-  display: grid;
-  grid-template-columns: minmax(260px, 0.78fr) minmax(0, 1.65fr);
-  align-items: start;
+  display: flex;
+  flex-direction: column;
   gap: 22px;
 }
 
 .matches-form-card,
 .matches-list-card {
   min-width: 0;
-  box-sizing: border-box;
   padding: 23px;
-  background: #ffffff;
+  box-sizing: border-box;
+  background: #fff;
   border: 1px solid #e2e8f0;
   border-radius: 11px;
+}
+
+.matches-form-card {
+  width: 100%;
+  max-width: 560px;
 }
 
 .matches-card-heading {
@@ -90,9 +94,9 @@
   margin: 7px 0 0;
   color: #8994a7;
   font-size: 12px;
-  line-height: 1.5;
 }
 
+/* Form */
 .matches-form {
   display: flex;
   flex-direction: column;
@@ -108,12 +112,11 @@
 .matches-form input,
 .matches-form select {
   width: 100%;
-  min-width: 0;
   height: 42px;
   box-sizing: border-box;
   margin-bottom: 17px;
   padding: 0 11px;
-  background: #ffffff;
+  background: #fff;
   border: 1px solid #d9e0eb;
   border-radius: 6px;
   color: #172033;
@@ -129,18 +132,18 @@
   box-shadow: 0 0 0 3px rgba(65, 105, 225, 0.11);
 }
 
-.matches-form-actions {
+.matches-form-actions,
+.match-card-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 9px;
-  margin-top: 2px;
 }
 
 .matches-primary-button,
 .matches-cancel-button,
-.matches-row-actions button {
+.match-card-actions button {
   min-height: 36px;
-  padding: 9px 12px;
+  padding: 9px 13px;
   border: none;
   border-radius: 6px;
   font-family: inherit;
@@ -153,7 +156,7 @@
 .matches-primary-button,
 .matches-edit-button {
   background: #4169e1;
-  color: #ffffff;
+  color: #fff;
 }
 
 .matches-primary-button:hover,
@@ -166,10 +169,7 @@
   color: #344054;
 }
 
-.matches-cancel-button:hover {
-  background: #dfe5ee;
-}
-
+/* Matches section */
 .matches-list-heading {
   display: flex;
   justify-content: space-between;
@@ -179,9 +179,8 @@
 }
 
 .matches-search {
-  width: 210px;
+  width: 230px;
   max-width: 100%;
-  min-width: 0;
   height: 38px;
   box-sizing: border-box;
   padding: 0 11px;
@@ -191,47 +190,46 @@
   font-size: 12px;
 }
 
-.matches-table-wrapper {
-  width: 100%;
-  overflow-x: auto;
+/* Match cards */
+.matches-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
 }
 
-.matches-table {
-  width: 100%;
-  border-collapse: collapse;
-  text-align: left;
+.match-card {
+  min-width: 0;
+  padding: 19px;
+  background: #fff;
+  border: 1px solid #e8edf4;
+  border-radius: 10px;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.matches-table th {
-  padding: 12px 10px;
-  background: #f5f7fb;
-  color: #536178;
-  font-size: 11px;
-  font-weight: 700;
-  white-space: nowrap;
+.match-card:hover {
+  border-color: #d2dcf5;
+  box-shadow: 0 4px 14px rgba(23, 32, 51, 0.05);
 }
 
-.matches-table td {
-  padding: 14px 10px;
-  border-bottom: 1px solid #e8edf4;
-  color: #536178;
-  font-size: 12px;
-  white-space: nowrap;
-}
-
-.matches-table tbody tr:hover {
-  background: #fafbfe;
-}
-
-.matches-team-names {
+.match-card-top {
   display: flex;
   align-items: center;
-  gap: 6px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 17px;
 }
 
-.matches-versus {
-  color: #98a2b3;
-  font-size: 10px;
+.match-tournament-label {
+  display: inline-block;
+  max-width: 100%;
+  padding: 5px 8px;
+  overflow-wrap: anywhere;
+  background: #eef2ff;
+  border-radius: 5px;
+  color: #3153c8;
+  font-size: 11px;
+  font-weight: 600;
 }
 
 .matches-status {
@@ -257,21 +255,63 @@
   color: #c62828;
 }
 
-.matches-row-actions {
+.match-card-teams {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 7px;
+  margin: 0 0 17px;
+  color: #172033;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.match-card-teams span {
+  color: #98a2b3;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.match-card-details {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  padding: 14px 0;
+  border-top: 1px solid #edf0f5;
+  border-bottom: 1px solid #edf0f5;
+}
+
+.match-card-details div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 12px;
+}
+
+.match-card-details span {
+  color: #8994a7;
+}
+
+.match-card-details strong {
+  color: #536178;
+  font-weight: 500;
+  text-align: right;
+}
+
+.match-card-actions {
+  margin-top: 16px;
 }
 
 .matches-delete-button {
   background: #dc4545;
-  color: #ffffff;
+  color: #fff;
 }
 
 .matches-delete-button:hover {
   background: #bd3030;
 }
 
+/* Messages */
 .matches-empty {
   padding: 25px 12px;
   color: #718096;
@@ -289,15 +329,22 @@
   font-size: 13px;
 }
 
+/* Responsive */
 @media (max-width: 1100px) {
-  .matches-layout {
-    grid-template-columns: minmax(240px, 0.8fr) minmax(0, 1.2fr);
-    gap: 16px;
+  .matches-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .matches-page-header {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
-  .matches-form-card,
-  .matches-list-card {
-    padding: 17px;
+  .matches-total,
+  .matches-form-card {
+    width: 100%;
   }
 
   .matches-list-heading {
@@ -308,31 +355,19 @@
   .matches-search {
     width: 100%;
   }
-}
 
-@media (max-width: 760px) {
-  .matches-page-header {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .matches-layout {
+  .matches-grid {
     grid-template-columns: 1fr;
   }
 
-  .matches-total {
-    width: 100%;
-    box-sizing: border-box;
+  .matches-form-card,
+  .matches-list-card {
+    padding: 17px;
   }
 }
 
 @media (max-width: 480px) {
   .matches-page-header h1 {
     font-size: 24px;
-  }
-
-  .matches-form-card,
-  .matches-list-card {
-    padding: 15px;
   }
 }

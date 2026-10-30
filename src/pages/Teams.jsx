@@ -250,51 +250,49 @@ function Teams() {
               {search ? "No matching teams found." : "No teams registered yet."}
             </p>
           ) : (
-            <div className="teams-table-wrapper">
-              <table className="teams-table">
-                <thead>
-                  <tr>
-                    <th>Team Name</th>
-                    <th>Coach</th>
-                    <th>Tournament</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
+            <div className="teams-grid">
+  {filteredTeams.map((team) => (
+    <article className="team-item-card" key={team.id}>
+      <div className="team-item-top">
+        <span className="teams-tournament-label">
+          {getTournamentName(team.tournamentId)}
+        </span>
+      </div>
 
-                <tbody>
-                  {filteredTeams.map((team) => (
-                    <tr key={team.id}>
-                      <td className="teams-name-cell">{team.name}</td>
-                      <td>{team.coach}</td>
-                      <td>
-                        <span className="teams-tournament-label">
-                          {getTournamentName(team.tournamentId)}
-                        </span>
-                      </td>
-                      <td>
-                        <div className="teams-row-actions">
-                          <button
-                            type="button"
-                            className="teams-edit-button"
-                            onClick={() => handleEdit(team)}
-                          >
-                            Edit
-                          </button>
+      <h3>{team.name}</h3>
 
-                          <button
-                            type="button"
-                            className="teams-delete-button"
-                            onClick={() => handleDelete(team.id)}
-                          >
-                            Delete
-                          </button>
-                        </div>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+      <div className="team-item-details">
+        <div className="team-detail-row">
+          <span className="detail-label">Coach</span>
+          <span>{team.coach}</span>
+        </div>
+
+        <div className="team-detail-row">
+          <span className="detail-label">Tournament</span>
+          <span>{getTournamentName(team.tournamentId)}</span>
+        </div>
+      </div>
+
+      <div className="team-item-actions">
+        <button
+          type="button"
+          className="teams-edit-button"
+          onClick={() => handleEdit(team)}
+        >
+          Edit
+        </button>
+
+        <button
+          type="button"
+          className="teams-delete-button"
+          onClick={() => handleDelete(team.id)}
+        >
+          Delete
+        </button>
+      </div>
+    </article>
+  ))}
+</div>
           )}
         </section>
       </div>
